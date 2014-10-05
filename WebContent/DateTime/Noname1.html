@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>jQuery Calendar with time picker example</title>
+
+		<script type="text/javascript" src="jquery.js"></script>
+
+		<script type="text/javascript" src="jquery-calendar.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="jquery-calendar.css" />
+
+		<link rel="stylesheet" type="text/css"  href="styles.css" />
+
+		<script type="text/javascript">
+
+		//<![CDATA[
+
+			$(document).ready(function (){ 
+
+				$("#calendar1, #calendar2").calendar();
+
+				$("#calendar1_alert").click(function(){alert(popUpCal.parseDate($('#calendar1').val()))});
+
+			});
+
+		//]]>
+
+		</script>
+
+	</head>
+
+	<body>
+				<input type="text" id="calendar1" class="calendarFocus"/>
+
+				<input type="button" id="calendar1_alert" value="Alert datetime object"/>
+
+
+	</body>
+
+</html>s

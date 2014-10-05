@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+@charset "utf-8";
+/* CSS Document */
+
+p 
+{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+
+body
+{
+margin:0;
+padding:0;
+}
+
+#main
+{
+margin:auto;
+position:relative;
+}
+
+#header
+{
+width:100%;
+height:155px;
+background:url(../images/setting_Bg.jpg);
+background-repeat:repeat-x;
+}
+
+#header1
+{
+width:100px;
+height:30px;
+float:right;
+line-height:25px;
+}
+#icons
+{
+width:1024px;
+height:30px;
+float:right;
+margin-right:20px;
+line-height:25px;
+}
+
+
+.logout
+{
+float:right;
+
+}
+.home
+{
+float:right;
+margin-right:20px;
+}
+
+
+#setting
+{
+margin:0 auto;
+background:url(../images/global_settings.png);
+background-repeat:repeat-x;
+width:500px;
+height:150px;
+
+}
+
+#welcome
+{
+float:right;
+width:400px;
+margin-top:70px;
+height:30px;
+}
+
+#welcome p
+{
+float:right;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:20px;
+font-weight:bold;
+margin-right:30px;
+}
+
+#footer
+{
+background:url(../images/setting_footer.jpg);
+background-repeat:repeat-x;
+width:100%;
+height:40px;
+clear:both;
+bottom:0px;
+position:absolute;
+}
+
+#footer p 
+{
+font-family:verdana;
+font-size:12px;
+line-height:20px;
+color:#FFFFFF;
+margin-left:10px;
+}
+
+.para
+{
+	font:12px Verdana;
+}

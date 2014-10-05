@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>jQuery Calendar with time picker example</title>
+
+		<script type="text/javascript" src="jquery.js"></script>
+
+		<script type="text/javascript" src="jquery-calendar.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="jquery-calendar.css" />
+
+		<link rel="stylesheet" type="text/css"  href="styles.css" />
+
+		<script type="text/javascript">
+
+		//<![CDATA[
+
+			$(document).ready(function (){ 
+
+				$("#calendar1, #calendar2").calendar();
+
+				$("#calendar1_alert").click(function(){alert(popUpCal.parseDate($('#calendar1').val()))});
+
+			});
+
+		//]]>
+
+		</script>
+
+	</head>
+
+	<body>
+		
+
+				Examples of the time descriptor format are <tt>timeSeparators:[' ',':']</tt> for the 24 hour format and <tt>timeSeparators:[' ',':','AM','PM']</tt> for the AM/PM format.
+
+			</p>
+			
+			<p>
+				<b>Update:</b> I have fixed some bugs since the original publication. Thanks to everyone who emailed me patches!
+			</p>
+
+			<p class="disclaimer">
+
+				<b>Be advised:</b> The time picker may be buggy and/or the original jQuery Calendar functionality may be hampered. Use this version at own risk and check the original version before blaiming jQuery Calendar authors for any bugs or requesting support from them!
+
+			</p>
+
+			<fieldset> 
+
+				<legend>Example</legend>
+
+				<input type="text" id="calendar1" class="calendarFocus"/>
+
+				<input type="button" id="calendar1_alert" value="Alert datetime object"/>
+
+			</fieldset>
+
+			<p class="smallbottom">
+
+				Original code: <a href="http://marcgrabanski.com/code/jquery-calendar/">jQuery Calendar, Written by Marc Grabanski and extended by Keith Wood</a>
+
+			</p>
+
+			<p class="smallbottom">
+
+				Time picker added by: <a href="http://razum.si">Gregor Petrin Kraškovic, Razum d.o.o.</a>
+
+			</p>
+
+		</div>
+
+	</body>
+
+</html>s

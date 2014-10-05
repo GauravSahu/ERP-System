@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+background:#b2b2b2;
+background-repeat:repeat-x;
+background-position:top;
+margin:0;
+padding:0;
+text-align:center;
+}
+
+#main
+{
+width:100%;
+margin:0 auto;
+padding:0;
+text-align:center;
+position:relative;
+}
+
+#header
+{
+width:100%;
+height:160px;
+}
+
+#header1
+{
+width:100%;
+height:30px;
+float:right;
+margin-right:20px;
+line-height:25px;
+}
+
+#header1 a
+{
+color:#CCCCCC;
+font-family:Verdana;
+font-size:12px;
+float:right;
+margin-right:20px;
+}
+
+#master
+{
+margin:0 auto;
+background:url(../images/master.png);
+width:455px;
+height:150px;
+}
+
+#citymaster
+{
+margin:0 auto;
+background:url(../images/city_master1.png);
+background-repeat:no-repeat;
+width:169px;
+height:150px;
+}
+
+#content
+{
+margin:0 auto;
+background:url(../images/MasterData_bg2.jpg);
+background-repeat:no-repeat;
+width:1024px;
+height:auto;
+}
+
+#content_master
+{
+margin:0 auto;
+background:url(../images/MasterData_bg1.jpg);
+background-repeat:no-repeat;
+width:1024px;
+height:450px;
+}
+#city_content
+{
+width:1005px;
+height:430px;
+margin:0 auto;
+text-align:center;
+/*padding-top:50px;*/
+}
+
+.tab
+{
+margin-left:400px;
+_margin-left:110px;
+padding-top:100px;
+_padding-top:0px;
+_margin-top:100px;
+}
+
+#footer
+{
+background:url(../images/MasterData_footer.jpg);
+background-repeat:repeat-x;
+width:100%;
+height:40px;
+left:0px;
+position:absolute;
+}
+
+.para
+{
+	font:12px Verdana;
+}
+
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.style2 {
+	color: #FFFFFF;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height:20px;
+}
+
+#vendor
+	{
+	{
+margin:0 auto;
+background:url(../images/vendormaster.png);
+width:355px;
+height:40px;
+}
+
+
+#content1
+{
+margin:0 auto;
+background:url(../images/MasterData_bg2.jpg);
+background-repeat:no-repeat;
+width:1024px;
+height:450px;
+}
+
+	
+

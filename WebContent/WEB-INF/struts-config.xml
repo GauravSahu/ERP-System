@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <data-sources>
+   <data-source type="org.apache.commons.dbcp.BasicDataSource">
+   <set-property property="driverClassName" value="com.mysql.jdbc.Driver" /> 
+   <set-property property="url" value="jdbc:mysql://localhost:3306/iERP" /> 
+   <set-property property="username" value="root" /> 
+   <set-property property="password" value="root" /> 
+   </data-source>
+  </data-sources>
+ <form-beans>
+  <form-bean name="loginForm" type="com.itech.iERP.forms.LoginForm"></form-bean>
+   <form-bean name="scodeForm" type="com.itech.iERP.forms.ScodeMasterForm"></form-bean>
+   <form-bean name="ForgotPasswordForm" type="com.itech.iERP.forms.ForgotPasswordForm"/>
+   <form-bean name="CountryForm" type="com.itech.iERP.forms.ContryForm" />
+   <form-bean name="StateForm" type="com.itech.iERP.forms.StateForm"/>
+   <form-bean name="CityForm" type="com.itech.iERP.forms.CityForm"/>
+   <form-bean name="RoleForm" type="com.itech.iERP.forms.RoleForm"/>
+   <form-bean name="DesignationForm" type="com.itech.iERP.forms.DesignationForm"/>
+   <form-bean name="BankForm" type="com.itech.iERP.forms.BankForm" />
+   <form-bean name="VendorForm" type="com.itech.iERP.forms.VendorMasterForm" />
+   <form-bean name="SalaryForm" type="com.itech.iERP.forms.SalaryForm" />
+   <form-bean name="QualificationForm" type="com.itech.iERP.forms.QualificationForm" />
+   <form-bean name="ItemCategoryForm" type="com.itech.iERP.forms.ItemCategoryForm" />
+   <form-bean name="LeavetypeForm" type="com.itech.iERP.forms.LeavetypeForm"/>
+   <form-bean name="EmployeeForm" type="com.itech.iERP.forms.EmployeeForm"/>
+   <form-bean name="UserForm" type="com.itech.iERP.forms.UserForm"/>
+   <form-bean name="CustomerForm" type="com.itech.iERP.forms.CustomerForm"/>
+   <form-bean name="CompanyForm" type="com.itech.iERP.forms.CompanyForm"/>
+   <form-bean name="TemplateForm" type="com.itech.iERP.forms.TemplateForm"/>
+   <form-bean name="AttendanceForm" type="com.itech.iERP.forms.AttendanceStatusForm"/>
+   <form-bean name="CalenderForm" type="com.itech.iERP.forms.CalenderTypeForm"/>
+   <form-bean name="previlegeForm" type="com.itech.iERP.forms.PrevilegeForm" />
+   <form-bean name="AtteModForm" type="com.itech.iERP.forms.AttendanceModuleForm" />
+   <form-bean name="LeavModForm" type="com.itech.iERP.forms.LeaveModuleForm" />
+   <form-bean name="ExpenseTypeForm" type="com.itech.iERP.forms.ExpenseTypeMasterForm" />
+   <form-bean name="ExpenseModuleForm" type="com.itech.iERP.forms.ExpenseModuleForm"/>
+   <form-bean name="TimeModuleForm" type="com.itech.iERP.forms.TimesheetModuleForm"/>
+   <form-bean name="CalenderTypeForm" type="com.itech.iERP.forms.CalenderForm"/>
+   <form-bean name="ComponentTypeForm" type="com.itech.iERP.forms.ComponentTypeMasterForm"/>
+   <form-bean name="PayslipForm" type="com.itech.iERP.forms.PayslipForm"/>
+   <form-bean name="SalesModuleForm" type="com.itech.iERP.forms.SalesModuleForm"/>
+   <form-bean name="Accounttypemaster" type="com.itech.iERP.forms.AccountMasterForm"/>
+   <form-bean name="paymenttrans" type="com.itech.iERP.forms.PaymentTransactionForm"/>
+   <form-bean name="downForm" type="com.itech.iERP.forms.DocDownloadForm" />
+   <form-bean name="warehouseform" type="com.itech.iERP.forms.WareHouseForm"/>
+   <form-bean name="orderform" type="com.itech.iERP.forms.OrderModuleForm"/>
+   <form-bean name="PriceMasterForm" type="com.itech.iERP.forms.PriceMasterForm"></form-bean>
+   <form-bean name="ItemMasterForm" type="com.itech.iERP.forms.ItemMasterForm"></form-bean>
+   <form-bean name="GoodsResivedForm" type="com.itech.iERP.forms.GoodsResivedForm"></form-bean>
+   <form-bean name="StockUpdateForm" type="com.itech.iERP.forms.StockUpdateForm"></form-bean>
+   <form-bean name="BookmasterForm" type="com.itech.iERP.forms.BookMasterForm" /> 
+  <form-bean name="BookCatForm" type="com.itech.iERP.forms.BookCatForm" /> 
+  <form-bean name="LibraryModuleForm" type="com.itech.iERP.forms.LibraryModuleForm" /> 
+  </form-beans>
+  <global-exceptions /> 
+  
+  <global-forwards>
+     <forward name="restricted" path="/Jsp/common/restrict.jsp" />
+     <forward name="session" path="/Jsp/common/sessionexpired.jsp"/>
+  </global-forwards> 
+   
+
+ <action-mappings>
+ <!-- Country Excel upload -->
+<action path="/ExcelUpload" type="org.apache.struts.actions.ForwardAction"
+			parameter="/Jsp/MasterData/countryexcelupload.jsp" scope="request" />
+         <!-- Login -->
+ 		<action path="/Login" type="com.itech.iERP.actions.LoginAction" parameter="action" name="loginForm" validate="false">
+			 	<forward name="home" path="/Jsp/index.jsp" /> 
+			 	<forward name="adminhome" path="/admhome.jsp" />
+			 	<forward name="home1" path="/Jsp/scode.jsp" />
+			 	<forward name="payroll" path="/payroll.jsp" />
+			 	<forward name="inventory" path="/inventory.jsp" />
+			 	<forward name="accounting" path="/account.jsp"/>
+			 	<forward name="settings" path="/settings.jsp" />
+			 	<forward name="sales" path="/sales.jsp"/>
+			 	<forward name="reports" path="/reports.jsp"/>
+			 	<forward name="masterdata" path="/masterdata.jsp"/>
+		 				 	
+		 </action>
+		 
+		 <!-- Logout -->
+			<action path="/Logout" type="com.itech.iERP.actions.LogoutAction"   scope="request">
+				<forward name="home" path="/Jsp/index.jsp" /> 
+			</action>	
+			
+			<!-- State Master -->
+			<action path="/state" type="com.itech.iERP.actions.StateMasterAction" parameter="action" name="stateForm" validate="true">
+		  			<forward name="statemaster" path="/Jsp/MasterData/state.jsp" /> 		
+		  	</action> 
+		  	
+			
+			<!-- SCODE -->
+			<action path="/Scode" type="com.itech.iERP.actions.ScodeMasterAction" parameter="action" name="scodeForm">
+			       <forward name="home" path="/Jsp/scode.jsp" />
+			</action>
+			
+			<!-- Forgot Password -->
+			
+			<action path="/ForgotPassword1" type="org.apache.struts.actions.ForwardAction"  parameter="/Jsp/common/forgotpassword.jsp"  scope="request"/>
+			
+			<action path="/ForgotPassword" type="com.itech.iERP.actions.ForgotPasswordAction" name="ForgotPasswordForm" parameter="action" scope="request">
+		    	<forward name="home" path="/Jsp/index.jsp" /> 
+		        <forward name="forgotpassword" path="/Jsp/common/forgotpassword.jsp" /> 	
+		    </action>
+			
+			<!-- Country Master -->
+			<action path="/Country" type="com.itech.iERP.actions.CountryMasterAction" name="CountryForm" parameter="action" scope="request">
+			  <forward name="country" path="/Jsp/MasterData/contryMaster.jsp" />
+			</action>
+			
+			<!-- State Master -->
+			<action path="/State" type="com.itech.iERP.actions.StateMasterAction" name="StateForm" parameter="action" scope="request">
+			<forward name="state" path="/Jsp/MasterData/stateMaster.jsp" />
+			</action>
+			
+			<!-- City Master -->
+			<action path="/City" type="com.itech.iERP.actions.CityMasterAction" name="CityForm" parameter="action" scope="request">
+			<forward name="city" path="/Jsp/MasterData/citymaster.jsp" />
+			</action>
+			
+		    <!-- Role Master -->
+		    <action path="/Role" type="com.itech.iERP.actions.RoleAction" name="RoleForm" parameter="action" scope="request">
+		    <forward name="role" path="/Jsp/MasterData/rolemaster.jsp" />
+		    </action>	
+			
+			<!-- Designation Master -->
+			<action path="/Desi" type="com.itech.iERP.actions.DesignationAction" name="DesignationForm" parameter="action" scope="request">
+			<forward name="desi" path="/Jsp/MasterData/designationmaster.jsp" />
+			</action>
+			
+			<!-- Bank Master -->
+			<action path="/Bank" type="com.itech.iERP.actions.BankAction" name="BankForm" parameter="action" scope="request">
+			<forward name="bank" path="/Jsp/MasterData/bankmaster.jsp" />
+			</action>
+			
+			<!-- Vendor Master -->
+			<action path="/Vendor" type="com.itech.iERP.actions.VendorMasterAction" name="VendorForm" parameter="action" scope="request">
+			<forward name="vendorlist" path="/Jsp/MasterData/vendormaster.jsp" />
+			</action>
+			
+			<!-- Salary Master -->
+			<action path="/Salary" type="com.itech.iERP.actions.SalaryComponentMaster" name="SalaryForm" parameter="action" scope="request">
+			<forward name="salary" path="/Jsp/MasterData/salarymaster.jsp" />
+			</action>
+			
+			<!-- Qualification Master -->
+			<action path="/Qualification" type="com.itech.iERP.actions.QualificationAction" name="QualificationForm" parameter="action" scope="request">
+			  <forward name="qualification" path="/Jsp/MasterData/qualification.jsp" />
+			</action>
+			
+			<!-- ItemCategory Master -->
+			<action path="/Itemcategory" type="com.itech.iERP.actions.ItemCategoryAction" name="ItemCategoryForm" parameter="action" scope="request">
+			  <forward name="itemcat" path="/Jsp/MasterData/itemcategory.jsp" />
+			</action>
+			
+			<!-- LeaveType Master -->
+			<action path="/Leavetype" type="com.itech.iERP.actions.LeavetypeAction" name="LeavetypeForm" parameter="action" scope="request">
+			<forward name="leaveType" path="/Jsp/MasterData/leavetypeMaster.jsp" />
+			</action>
+			
+			<!-- Employee Master -->
+            <action path="/Employee"  type="com.itech.iERP.actions.EmployeeAction" name= "EmployeeForm" parameter="action" scope="request">
+            <forward name="employee" path="/Jsp/MasterData/emp1.jsp" />
+            </action>
+            
+            <!-- User Master -->
+			<action path="/User" type="com.itech.iERP.actions.UserMasterAction" name="UserForm" parameter="action" scope="request">
+			<forward name="userMaster" path="/Jsp/MasterData/userMaster.jsp" />
+			</action>
+			
+			
+             <!-- Customer Master -->
+			<action path="/Customer" type="com.itech.iERP.actions.CustomerMasterAction" name="CustomerForm" parameter="action" scope="request">
+			<forward name="customerMaster" path="/Jsp/MasterData/customerMaster.jsp" />
+			</action>
+           			
+            <!-- Company Master -->
+            <action path="/Company" type="com.itech.iERP.actions.CompanyAction" name="CompanyForm" parameter="action" scope="request">
+            <forward name="companyMaster" path="/Jsp/MasterData/companyMaster.jsp" />
+            </action>
+            
+            <!-- Template Master -->
+            <action path="/Template" type="com.itech.iERP.actions.TemplateAction" name="TemplateForm" parameter="action" scope="request">
+            <forward name="TemplateMaster" path="/Jsp/MasterData/TemplateMaster.jsp" />
+            </action>
+            
+            <!-- Attendance Status Master -->
+            <action path="/Status" type="com.itech.iERP.actions.AttendanceStatus" name="AttendanceForm" parameter="action" scope="request">
+            <forward name="AttendanceStatus" path="/Jsp/MasterData/AttendanceStatus.jsp"/>
+            </action>
+            
+            <!-- Calender Status Master -->
+            <action path="/Calender" type="com.itech.iERP.actions.CalendarDayTypeAction" name="CalenderForm" parameter="action" scope="request">
+            <forward name="Calender" path="/Jsp/MasterData/CalenderStatus.jsp" />
+            </action>
+            
+            <!-- Previlege Master -->
+            <action path="/previlege" type="com.itech.iERP.actions.PrevilegeAction" parameter="action" name="previlegeForm" scope="request">
+		 	 <forward name="home" path="/Jsp/MasterData/previlegemaster.jsp" />
+		   </action>
+		   
+		   <!-- Expense Type Master -->
+		   <action path="/expense" type="com.itech.iERP.actions.ExpenseTypeMaster" parameter="action" name="ExpenseTypeForm" scope="request">
+		   <forward name="home" path="/Jsp/MasterData/expensetypemaster.jsp" />
+		   </action>
+		   
+		   <!-- Attendance Module -->
+		   <action path="/attendance" type="com.itech.iERP.actions.AttendanceModuleAction" parameter="action" name="AtteModForm" scope="request">
+		   <forward name="attmod" path="/Attendance.jsp"/>
+		   <forward name="reports" path="/Payroll/AtteReports.jsp"/>
+		   <forward name="reports1" path="/Payroll/AtteReports.jsp"/>
+		   </action>
+            
+           <!-- Leave Module -->
+           <action path="/leave" type="com.itech.iERP.actions.LeaveModuleAction" parameter="action" name="LeavModForm" scope="request">
+           <forward name="leave" path="/Payroll/leaverequest.jsp"/>
+           <forward name="approval" path="/Payroll/LeaveApproval.jsp"/>
+           <forward name="reports" path="/Payroll/LeaveReports.jsp"/>
+           <forward name="history" path="/Payroll/LeaveHistory.jsp"/>
+           <forward name="status" path="/Payroll/LeaveStatus.jsp"></forward>
+           </action>
+           
+           
+            
+            <!-- Expense Module -->
+            <action path="/expenseModule" type="com.itech.iERP.actions.ExpenseModuleAction" parameter="action" name="ExpenseModuleForm" scope="request">
+            <forward name="request" path="/Payroll/expenserequest.jsp"/>
+            <forward name="approve" path="/Payroll/expenseapproval.jsp"/>
+            <forward name="status" path="/Payroll/expensestatus.jsp"/> 
+            <forward name="reports" path="/Payroll/expensereports.jsp"/>
+            </action>
+            
+            <!-- TimeSheet Module -->
+            <action path="/timesheet" type="com.itech.iERP.actions.TimesheetModuleAction" parameter="action" name="TimeModuleForm" scope="request">
+            <forward name="timesheet" path="/timesheetModule.jsp"/>
+            <forward name="reports" path="/Payroll/timesheetreports.jsp"></forward>
+            </action>
+            
+             <!-- Calender Master -->
+            <action path="/CalenderType" type="com.itech.iERP.actions.CalenderAction" parameter="action" name="CalenderTypeForm" scope="request">
+		 	 <forward name="calendertype" path="/Jsp/MasterData/calender.jsp" />
+		 	 <forward name="updateType" path="/Update.jsp"/>
+		   </action>
+		   <!-- Component Action -->
+		   <action path="/Component" type="com.itech.iERP.actions.ComponentAction" parameter="action" name="ComponentTypeForm" scope="request">
+		   <forward name="component" path="/Jsp/MasterData/componentmaster.jsp"></forward>
+		   </action> 
+		   
+		   <!-- Payslip Module -->
+		   <action path="/payslip" type="com.itech.iERP.actions.PayslipAction" parameter="action" name="PayslipForm" scope="request">
+		   <forward name="setting" path="/Payroll/salarysetting.jsp"></forward>
+		   <forward name="salAllo" path="/Payroll/salaryAllocation.jsp"></forward>
+		   <forward name="setsalry" path="/Payroll/setsalary.jsp"></forward> 
+		   <forward name="modsalary" path="/Payroll/modifysalary.jsp"/>
+		   <forward name="postsalry" path="/Payroll/postsalry.jsp"/>
+		   <forward name="salack" path="/Payroll/salack.jsp"/>
+		   <forward name="jsalsett" path="/Payroll/jsalsett.jsp"/>
+		   <forward name="postfinalsalaryjain" path="/Payroll/postfinalsalryjain.jsp"/>
+		   <forward name="salarysettingwithcomponent" path="/Payroll/salarysettingwithcomponent.jsp"/>
+		   <forward name="payslip" path="/Payroll/generatepayslip.jsp"></forward>
+		   <forward name="viewpayslip" path="/Payroll/viewpayslip.jsp"/>
+		   <forward name="updatesalary" path="/Payroll/updatesalary.jsp"/>
+		   <forward name="updategeneratesalary" path="/Payroll/updategeneratesalary.jsp"/>
+		   </action>
+		   
+		   <!-- Sales Module -->
+		   <action path="/addenquiry" type="org.apache.struts.actions.ForwardAction" parameter="/Sales/addenquiry.jsp" scope="request">
+		   </action>
+		   
+		   <action path="/reports" type="org.apache.struts.actions.ForwardAction" parameter="/Sales/reports.jsp" scope="request">
+		   </action>
+		   
+		   <action path="/salesmodule" type="com.itech.iERP.actions.SalesModuleAction" parameter="action" name="SalesModuleForm" scope="request">
+		   <forward name="addenquiry" path="/Sales/addenquiry.jsp"/>
+		   <forward name="followup" path="/Sales/followup.jsp" />
+		   <forward name="appointment" path="/Sales/appointment.jsp"/>
+		   <forward name="quotation" path="/Sales/quotation.jsp"/>
+		   <forward name="enquiryreports" path="/Sales/enquiryreports.jsp"/>
+		   <forward name="followupreports" path="/Sales/followupreports.jsp"/>
+		   <forward name="quotationreports" path="/Sales/quotationreports.jsp"/>
+		   
+		   </action>
+		   
+		      <!-- File Downloading -->
+          <action
+			path="/DownloadIt"
+			type="com.itech.iERP.actions.DownloadFileAction" name="LeavModForm" scope="request">						
+		   </action>
+		   
+		   <!-- Account Type Master -->
+		   <action path="/accounttype" type="com.itech.iERP.actions.AccountTypeAction" name="Accounttypemaster" scope="request" parameter="action">
+		   <forward name="accounttype" path="/Jsp/MasterData/accountmaster.jsp"/>
+		   </action>
+		   
+		   <!-- Payment Transaction -->
+		   <action path="/payment" type="com.itech.iERP.actions.PaymentTransacation" name="paymenttrans" scope="request" parameter="action">
+		   <forward name="payment" path="/Jsp/MasterData/paymenttrans.jsp" />
+		   </action>
+		   		   
+		  <!-- File Download -->
+		  <action path="/DownloadDocc" type="com.itech.iERP.actions.DocDownloadAction" name="downForm" parameter="action" scope="request">
+			<forward name="audiodownload" path="/Jsp/fdownload.jsp" />
+		</action>
+		    
+		 <action
+			path="/DownloadItDocs"
+			type="com.itech.iERP.actions.DownloadDocFileAction" name="downForm" scope="request">						
+		 </action>
+		 
+		 <!-- WareHouse Master -->
+		 <action path="/Warehouse" type="com.itech.iERP.actions.WarehouseAction" name="warehouseform" parameter="action" scope="request">
+		 <forward name="warehouse" path="/Jsp/MasterData/warehouse.jsp"/>
+		 </action>
+		 <!-- Order Module -->
+		 <action path="/Order" type="com.itech.iERP.actions.OrderModuleAction" name="orderform" parameter="action" scope="request">
+		 <forward name="order" path="/inventory/order.jsp"/>
+		 <forward name="pricecomparision" path="/inventory/pricecomparision.jsp"/>
+		 </action>
+		 
+		  <!-- Item Master Module -->
+            <action path="/Itemmaster" type="com.itech.iERP.actions.ItemMasterAction" parameter="action" name="ItemMasterForm" scope="request">
+            <forward name="itemmasterlist" path="/Jsp/MasterData/itemmaster.jsp"/>
+            </action>
+            <action path="/Pricemaster" type="com.itech.iERP.actions.PriceMasterAction" parameter="action" name="PriceMasterForm" scope="request">
+            <forward name="pricemaster" path="/Jsp/MasterData/pricemaster.jsp"/>
+            </action>
+		 
+		 	  <action path="/GoodsResived" type="com.itech.iERP.actions.GoodsResivedAction" parameter="action" name="GoodsResivedForm" scope="request">
+            <forward name="goodsresived" path="/goodsresived.jsp"/>
+            </action>
+            <action path="/StockUpdate" type="com.itech.iERP.actions.StockUpdateAction" parameter="action" name="StockUpdateForm" scope="request">
+            <forward name="stockupdate" path="/stockupdate1.jsp"/>
+            </action>
+          
+		 
+		  <!--  Library Module 
+  --> 
+ <action path="/Library" type="com.itech.iERP.actions.BookMasterAction" parameter="action" name="BookmasterForm" scope="request">
+  <forward name="Bookmaster" path="/Jsp/MasterData/BookMaster.jsp" /> 
+  </action>
+ <action path="/Librarycat" type="com.itech.iERP.actions.BookCategoryMasterAction" parameter="action" name="BookCatForm" scope="request">
+  <forward name="Bookcat" path="/Jsp/MasterData/BookcatMaster.jsp" /> 
+  </action>
+ <action path="/LibraryModule" type="com.itech.iERP.actions.LibraryModuleAction" parameter="action" name="LibraryModuleForm" scope="request">
+  <forward name="bookrequest" path="/Jsp/LibraryModule/bookrequest.jsp" /> 
+  <forward name="bookduesearch" path="/Jsp/LibraryModule/bookduesearch.jsp" /> 
+  <forward name="bookduesearch1" path="/Jsp/LibraryModule/bookduesearch.jsp" /> 
+  </action>
+		 
+		 
+ </action-mappings>
+  <controller>
+  </controller>
+   <message-resources parameter="com.itech.iERP.properties.ApplicationResources" /> 
+  
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" /> 
+  </plug-in>
+  </struts-config>
